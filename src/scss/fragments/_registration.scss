@@ -1,0 +1,93 @@
+.registration {
+  @include displayFlow(row, nowrap);
+
+  padding-top: 64px;
+  padding-bottom: 96px;
+  justify-content: space-between;
+
+  &-left {
+    @include displayFlow(column, wrap);
+
+    gap: 39px;
+  }
+
+  &-form {
+    p {
+      color: #b1b1b1;
+      font-size: 13px;
+      font-weight: $fontThin;
+      width: 359px;
+    }
+  }
+
+  &-radios {
+    @include displayFlow(row, nowrap);
+
+    gap: 20px;
+  }
+
+  &-radio {
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    .radio-label {
+      font-size: 11px;
+    }
+  }
+
+  &-btn {
+    position: relative;
+    width: 168px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: $fontNormal;
+    text-transform: uppercase;
+    background-color: $secondColor;
+    padding: 16px 66px 16px 30px;
+    border: none;
+    transition: 0.2s ease-in-out;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: url(/img/arrow-right.svg) no-repeat;
+      background-position: center;
+      width: 17px;
+      height: 10px;
+      right: 30px;
+      top: 19px;
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: translateX(5px);
+      background-image: $secondColor;
+    }
+  }
+
+  &-right {
+    @include displayFlow(column, wrap);
+
+    width: 652px;
+    color: #000;
+    font-size: 24px;
+    font-weight: $fontThin;
+    gap: 22px;
+
+    li {
+      list-style-image: url(/img/icon-li.svg);
+      margin-left: 28px;
+      padding-left: 14px;
+    }
+  }
+
+  &-title {
+    text-transform: uppercase;
+  }
+
+  &-ul {
+    @include displayFlow(column, wrap);
+
+    gap: 16px;
+  }
+}

@@ -1,0 +1,176 @@
+.cart {
+  @include flexDirectionJustifyAlign(row, wrap, space-between, start);
+
+  padding-top: 96px;
+  padding-bottom: 128px;
+
+  &-container {
+    @include displayFlow(column, wrap);
+
+    gap: 72px;
+  }
+
+  &-items {
+    @include displayFlow(column, wrap);
+
+    gap: 40px;
+  }
+
+  &-item {
+    @include displayFlow(row, nowrap);
+
+    position: relative;
+    transition: 0.2s ease-in-out;
+
+    &-img {
+      width: 262px;
+      height: 306px;
+    }
+
+    &-content {
+      @include displayFlow(column, wrap);
+
+      padding-top: 22px;
+      padding-left: 31px;
+      padding-right: 148px;
+    }
+
+    &-title {
+      width: 211px;
+      color: #222;
+      font-size: 24px;
+      font-weight: $fontNormal;
+      text-transform: uppercase;
+      margin-bottom: 42px;
+    }
+
+    &-species {
+      color: #575757;
+      font-size: 22px;
+      font-weight: $fontNormal;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    &-quantity {
+      display: inline-block;
+      width: 45px;
+      padding: 1px 16px;
+      padding-bottom: 2px;
+      border: 1px solid #eaeaea;
+      margin-left: 24px;
+
+      color: #656565;
+      font-size: 18px;
+      font-weight: $fontNormal;
+    }
+
+    &-quantity::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &-item:hover {
+    box-shadow: 17px 19px 24px rgb(0 0 0 / 13%);
+    background: #fff;
+  }
+
+  &-item::after {
+    content: url(/img/x.svg);
+    position: absolute;
+    cursor: pointer;
+    right: 22px;
+    top: 28px;
+  }
+
+  &-btns {
+    @include flexDirectionJustifyAlign(row, nowrap, space-between, center);
+  }
+
+  &-btn {
+    background: #fff;
+    border: 1px solid #a4a4a4;
+    padding: 16px 40px;
+    color: #000;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: $fontThin;
+    text-transform: uppercase;
+    transition: 0.2s ease-in-out;
+  }
+
+  &-btn:hover {
+    background-color: $secondColor;
+    color: #fff;
+    border-color: $secondColor;
+  }
+
+  &-order {
+    @include flexDirectionJustifyAlign(column, wrap, center, center);
+
+    position: sticky;
+    top: 94px;
+    gap: 57px;
+    margin-top: 17px;
+
+    &-form {
+      width: 100%;
+
+      label {
+        text-transform: uppercase;
+      }
+
+      button {
+        padding: 11px 15px;
+        font-size: 11px;
+        width: 103px;
+      }
+    }
+
+    &-total {
+      @include flexDirectionJustifyAlign(column, wrap, start, end);
+
+      padding: 42px;
+      background-color: #f5f3f3;
+      text-transform: uppercase;
+
+      .sub {
+        color: #4a4a4a;
+        font-size: 11px;
+        font-weight: $fontNormal;
+        margin-bottom: 12px;
+      }
+
+      .grand {
+        color: #222;
+        font-size: 16px;
+        font-weight: $fontThin;
+        margin-bottom: 21px;
+      }
+
+      hr {
+        width: 100%;
+        margin-bottom: 17px;
+      }
+
+      .checkout-btn {
+        color: #fff;
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 300;
+        text-transform: uppercase;
+        background-color: $secondColor;
+        padding: 16px 42px;
+        border: 1px solid $secondColor;
+        transition: 0.2s ease-in-out;
+      }
+
+      .checkout-btn:hover {
+        color: $secondColor;
+        background-color: #fff;
+      }
+    }
+  }
+}

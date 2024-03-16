@@ -1,0 +1,40 @@
+.feature {
+  @include flexDirectionJustifyAlign(row, wrap, space-between, center);
+
+  padding-top: 104px;
+  padding-bottom: 104px;
+  background-color: $mainColor;
+  gap: 30px;
+}
+
+.feature-item {
+  @include displayFlow(column, wrap);
+
+  text-align: center;
+}
+
+.feature-item h3 {
+  color: #fbfbfb;
+  font-size: 19.96px;
+  font-weight: $fontNormal;
+  margin-bottom: 16px;
+}
+
+.feature-item p {
+  color: #fbfbfb;
+  font-size: 13.972px;
+  font-weight: $fontThin;
+  width: 316px;
+}
+
+.feature-icon1 {
+  margin-bottom: 28px;
+}
+
+.feature-icon2 {
+  margin-bottom: 19px;
+}
+
+.feature-icon3 {
+  margin-bottom: 25px;
+}

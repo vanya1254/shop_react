@@ -1,0 +1,36 @@
+footer {
+  @include flexDirectionJustifyAlign(row, wrap, space-between, center);
+
+  background-color: $mainColor;
+  padding: 24px 0;
+}
+
+.footer-content {
+  color: #fbfbfb;
+  font-size: 16px;
+  font-weight: $fontNormal;
+}
+
+.icons {
+  @include displayFlow(row, wrap);
+
+  gap: 7px;
+}
+
+.icon-block {
+  @include flexDirectionJustifyAlign(row, nowrap, center, center);
+
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $secondColor;
+  }
+}
+
+.icon {
+  height: 17px;
+}

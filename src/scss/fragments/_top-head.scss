@@ -1,0 +1,39 @@
+.top-head {
+  @include flexDirectionJustifyAlign(row, wrap, space-between, center);
+  margin-top: 74px;
+  padding: 60px 0;
+  text-transform: uppercase;
+
+  &-title {
+    color: $secondColor;
+    font-size: 24px;
+    font-weight: $fontNormal;
+  }
+
+  &-breadcrumb {
+    @include displayFlow(row, wrap);
+
+    list-style-type: none;
+
+    &-item {
+      color: #636363;
+      font-size: 14px;
+      font-weight: $fontThin;
+    }
+    .active {
+      color: $secondColor;
+      font-weight: $fontBold;
+    }
+
+    &-item::before {
+      content: "/";
+      float: left;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+    &-item:first-child::before {
+      content: "";
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.aside-menu {
+  display: none;
+}
+
+.nav-bar {
+  cursor: pointer;
+}
+
+.aside-menu {
+  border: none;
+  background: #fff;
+  position: absolute;
+  display: none;
+  z-index: 5;
+  width: 232px;
+  padding: 32px;
+  top: 55px;
+  right: 0px;
+}
+
+.menu {
+  @include displayFlow(column, wrap);
+
+  gap: 24px;
+  font-size: 14px;
+}
+
+.menu h4 {
+  color: #000;
+  font-weight: $fontBold;
+  text-transform: uppercase;
+}
+
+.menu-content {
+  @include displayFlow(column, wrap);
+
+  gap: 20px;
+  padding-left: 1px;
+  font-weight: $fontNormal;
+}
+
+.menu-content article {
+  @include displayFlow(column, wrap);
+
+  gap: 12px;
+}
+
+.menu-content h4 {
+  color: $secondColor;
+  font-weight: $fontNormal;
+}
+
+.column-menu {
+  @include displayFlow(column, wrap);
+
+  gap: 11px;
+  padding-left: 21.5px;
+}

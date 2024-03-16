@@ -1,0 +1,11 @@
+@mixin flexDirectionJustifyAlign($direction, $wrap, $j-c, $a-i) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $j-c;
+  align-items: $a-i;
+}
+
+@mixin displayFlow($direction, $wrap) {
+  display: flex;
+  flex-flow: $direction $wrap;
+}

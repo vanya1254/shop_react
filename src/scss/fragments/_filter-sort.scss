@@ -1,0 +1,132 @@
+.filter-sort {
+  @include displayFlow(row, wrap);
+
+  position: relative;
+  height: 132px;
+  padding-top: 39px;
+  gap: 30px;
+
+  .filter {
+    padding-top: 13px;
+    width: 360px;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    z-index: 10;
+
+    &[open] {
+      background: #fff;
+      box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+
+    &[open] .filter-heading {
+      color: $secondColor;
+    }
+
+    &[open] path {
+      fill: $secondColor;
+    }
+
+    &-summary {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding-left: 16px;
+
+      &-heading {
+        color: #000;
+        font-size: 14px;
+        font-weight: ($fontBold - 100);
+      }
+    }
+
+    &-content {
+      &-item {
+        margin-top: 16px;
+        background: #fff;
+        padding: 0 16px 16px;
+
+        &[open] .filter-content-item-heading {
+          color: $secondColor;
+        }
+
+        &-heading {
+          padding-left: 11px;
+          padding-bottom: 11px;
+          color: #6f6e6e;
+          font-size: 14px;
+          font-weight: $fontNormal;
+          border-left: $secondColor 5px solid;
+          border-bottom: #ebebeb 1px solid;
+          cursor: pointer;
+        }
+
+        &-links {
+          @include displayFlow(column, wrap);
+
+          gap: 11px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+        }
+
+        &-link {
+          color: #6f6e6e;
+          font-size: 14px;
+          font-weight: $fontNormal;
+
+          &:hover {
+            color: $secondColor;
+          }
+        }
+      }
+    }
+  }
+
+  .sort {
+    @include displayFlow(row, wrap);
+
+    padding-top: 12px;
+    gap: 28px;
+
+    &-details {
+      position: relative;
+    }
+
+    &-summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    &-heading {
+      color: #6f6e6e;
+      font-size: 14px;
+      font-weight: $fontNormal;
+    }
+
+    &-box {
+      @include displayFlow(column, wrap);
+      z-index: 10;
+      gap: 6px;
+      position: absolute;
+      background: #fff;
+      box-shadow: 0px 4px 5px 2px rgba(60, 60, 61, 0.2);
+      padding: 7px 30px 11px 9px;
+      margin-top: 5px;
+      left: -10px;
+    }
+
+    &-check {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      color: #6f6e6e;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: $fontNormal;
+    }
+  }
+}

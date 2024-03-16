@@ -1,0 +1,132 @@
+.layer {
+  position: relative;
+  height: 665px;
+  margin-bottom: 9px;
+
+  .species {
+    @include displayFlow(column, wrap);
+
+    transition: 0.2s ease-in-out;
+    background-color: white;
+    z-index: 100;
+    position: absolute;
+    top: -65px;
+    left: calc(50% - 570px);
+    align-items: center;
+    border: 1px solid #eaeaea;
+    padding: 64px 250px;
+    gap: 65px;
+
+    &-titles {
+      @include displayFlow(column, wrap);
+
+      align-items: center;
+      gap: 12px;
+      margin-bottom: -17px;
+
+      h4 {
+        color: $secondColor;
+        font-size: 14px;
+        font-weight: $fontThin;
+        text-transform: uppercase;
+      }
+
+      .title-divider {
+        width: 63px;
+        height: 3px;
+        background-color: $secondColor;
+        border: none;
+      }
+
+      h3 {
+        color: #4d4d4d;
+        font-size: 18px;
+        font-weight: $fontThin;
+        text-transform: uppercase;
+      }
+    }
+
+    &-top {
+      @include displayFlow(column, wrap);
+
+      align-items: center;
+      gap: 32px;
+
+      p {
+        width: 555px;
+        color: #5e5e5e;
+        text-align: center;
+        font-size: 14px;
+        font-weight: $fontThin;
+      }
+
+      span {
+        color: $secondColor;
+        font-size: 24px;
+        font-weight: $fontThin;
+      }
+    }
+
+    &-divider {
+      width: 641px;
+      height: 1px;
+      border: none;
+      background-color: #eaeaea;
+    }
+
+    &-bottom {
+      @include displayFlow(column, wrap);
+
+      align-items: center;
+      gap: 48px;
+
+      .species-options {
+        @include displayFlow(row, wrap);
+
+        gap: 23px;
+      }
+
+      .species-option {
+        position: relative;
+
+        &-summary {
+          cursor: pointer;
+        }
+
+        &-heading {
+          color: #6f6e6e;
+          font-size: 14px;
+          font-weight: $fontNormal;
+          margin-right: 9px;
+        }
+
+        .sort-box {
+          position: absolute;
+          margin-top: 5px;
+          color: #6f6e6e;
+          font-family: Roboto;
+          font-size: 14px;
+          font-weight: $fontNormal;
+          padding: 7px 30px 11px 9px;
+          box-shadow: 0px 4px 5px 2px rgba(60, 60, 61, 0.2);
+          background: #fff;
+        }
+      }
+
+      .to-cart {
+        @include flexDirectionJustifyAlign(row, nowrap, center, center);
+
+        gap: 9px;
+        margin: 0;
+
+        path {
+          transition: 0.2s ease-in-out;
+        }
+      }
+
+      .to-cart:hover path {
+        fill: #fff;
+      }
+    }
+  }
+}

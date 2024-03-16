@@ -1,0 +1,50 @@
+.pagination {
+  @include displayFlow(row, wrap);
+
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 96px;
+
+  svg {
+    cursor: pointer;
+  }
+
+  .pages {
+    @include displayFlow(row, wrap);
+
+    // gap: 20px;
+  }
+
+  .page {
+    color: #c4c4c4;
+    font-size: 16px;
+    font-weight: $fontThin;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: $secondColor;
+      opacity: 0.8;
+    }
+
+    &::before {
+      content: "";
+      padding-left: 20px;
+    }
+
+    &:first-child {
+      color: $secondColor;
+    }
+
+    &:first-child::before {
+      padding-left: 0;
+    }
+
+    &:last-child::before {
+      content: ".....";
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,341 @@
+.center {
+  padding-left: calc(50% - 180px);
+  padding-right: calc(50% - 180px);
+}
+
+.profile {
+  display: none;
+}
+
+.cart-icon {
+  display: none;
+}
+
+.brand img {
+  display: none;
+}
+
+.brand {
+  margin-top: 74px;
+  padding-top: 148px;
+  padding-bottom: 148px;
+  margin-bottom: 64px;
+}
+
+.content {
+  height: auto;
+  margin: auto;
+}
+
+h1.title {
+  font-size: 38px;
+}
+h2.subtitle {
+  font-size: 20px;
+}
+
+.categories {
+  grid-template-columns: repeat(1, 343px);
+  grid-template-rows: 248px 248px 248px 111px;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.long {
+  width: auto;
+  height: 111px;
+}
+
+.products {
+  gap: 64px;
+}
+
+.sencation {
+  gap: 3.33px;
+}
+
+.items {
+  grid-template-columns: repeat(1, 360px);
+  gap: 16px;
+}
+
+.browse-all {
+  margin-bottom: 85px;
+}
+
+.feature {
+  flex-flow: column;
+  padding-top: 48px;
+  padding-bottom: 81px;
+  gap: 46px;
+}
+
+.feature-item {
+  align-content: center;
+}
+
+.subscribe {
+  flex-flow: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  gap: 40px;
+}
+
+.subscribe-left p {
+  font-size: 18px;
+}
+
+.subscribe-right p {
+  font-size: 14px;
+}
+
+footer {
+  flex-flow: column-reverse;
+  gap: 40px;
+  padding-top: 43px;
+  padding-bottom: 9px;
+}
+
+// Catalog
+
+.top-head {
+  padding-top: 24px;
+  padding-bottom: 46px;
+  gap: 36px;
+  justify-content: center;
+}
+
+.filter-sort {
+  padding-top: 12px;
+  height: 81px;
+  flex-wrap: nowrap;
+  gap: 0;
+
+  .filter {
+    margin-right: -262px;
+    width: 360px;
+
+    &-summary {
+      padding-left: 0px;
+
+      svg {
+        width: 37.5px;
+        height: 25px;
+      }
+    }
+
+    &-heading {
+      display: none;
+    }
+
+    &-content {
+      &-item {
+        margin-top: -1px;
+        padding-top: 16px;
+      }
+    }
+  }
+
+  .filter[open] .filter-summary {
+    padding-left: 6px;
+  }
+
+  .filter[open] ~ .sort {
+    z-index: 9;
+  }
+
+  .sort {
+    z-index: 11;
+    gap: 24px;
+    flex-wrap: nowrap;
+
+    &-summary {
+      gap: 9px;
+
+      .sort-heading {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.products {
+  gap: 40.5px;
+}
+
+.pagination {
+  margin-bottom: 64.5px;
+}
+
+.none {
+  display: none;
+}
+
+// Product
+
+.background {
+  height: 624px;
+
+  .slider {
+    &-product {
+      &-img {
+        width: 374px;
+        height: 454px;
+      }
+    }
+  }
+}
+
+.layer {
+  margin-bottom: 0;
+  height: 576px;
+
+  .species {
+    padding: 64.5px 25px;
+    width: 100%;
+    top: -100px;
+    left: 0;
+    gap: 32px;
+
+    &-titles {
+      margin-bottom: 0;
+    }
+
+    &-top p {
+      width: 326px;
+      line-height: 143.1%; /* 20.034px */
+    }
+
+    &-divider {
+      width: 175px;
+      margin-bottom: 17px;
+    }
+
+    &-bottom {
+      gap: 64px;
+
+      .species-option {
+        &-heading {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+.none {
+  display: none;
+}
+
+.mb-128 {
+  margin-bottom: 64px;
+}
+
+// Cart
+
+.top-head.no-crumbs-p {
+  padding-top: 50px;
+  padding-bottom: 69px;
+}
+
+.cart {
+  padding-top: 39px;
+  padding-bottom: 96px;
+  flex-flow: column wrap;
+  gap: 48px;
+
+  &-container {
+    gap: 30px;
+  }
+
+  &-items {
+    gap: 32px;
+  }
+
+  &-item {
+    &-img {
+      height: 188px;
+      width: 144px;
+    }
+
+    &-content {
+      padding-top: 13.5px;
+      padding-left: 17px;
+      padding-right: 56px;
+    }
+
+    &-title {
+      width: 141px;
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+
+    &-species {
+      font-size: 14px;
+    }
+
+    &-quantity {
+      width: 24px;
+      font-size: 10px;
+      padding: 1px 8px;
+    }
+  }
+
+  &-item::after {
+    transform: scale(0.58);
+    top: 14px;
+    right: 7px;
+  }
+
+  &-btns {
+    justify-content: center;
+    gap: 9px;
+  }
+
+  &-btn {
+    font-size: 12px;
+    font-weight: $fontNormal;
+    padding: 8px 18px;
+    width: 50%;
+    color: #575757;
+  }
+
+  &-order {
+    flex-flow: row wrap;
+    position: static;
+    margin-top: 0;
+    gap: 48px;
+
+    &-form {
+      width: 100%;
+    }
+    &-total {
+      width: 100%;
+    }
+  }
+}
+
+// Registration
+
+.registration {
+  padding-top: 40px;
+  flex-flow: column wrap;
+  gap: 40px;
+
+  &-right {
+    font-size: 16px;
+    gap: 22px;
+    width: 354px;
+  }
+
+  &-title {
+    margin-bottom: 10px;
+  }
+}
+
+// _aside
+
+.aside-menu {
+  top: 51px;
+}
