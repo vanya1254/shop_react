@@ -50,7 +50,7 @@
     &::after {
       position: absolute;
       content: "";
-      background: url(/img/arrow-right.svg) no-repeat;
+      background: url("../../assets/img/arrow-right.svg") no-repeat;
       background-position: center;
       width: 17px;
       height: 10px;
@@ -75,7 +75,7 @@
     gap: 22px;
 
     li {
-      list-style-image: url(/img/icon-li.svg);
+      list-style-image: url("../../assets/img/icon-li.svg");
       margin-left: 28px;
       padding-left: 14px;
     }

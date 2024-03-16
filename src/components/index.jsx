@@ -1,0 +1,14 @@
+export { Header } from "./Header";
+export { Aside } from "./Aside";
+export { CenterBg } from "./CenterBg";
+export { Categories } from "./Categories";
+export { Products } from "./Products";
+export { Sencation } from "./Sencation";
+export { Items } from "./Items";
+export { Features } from "./Features";
+export { Subscribe } from "./Subscribe";
+export { Footer } from "./Footer";
+export { TopHead } from "./TopHead";
+export { FilterSort } from "./FilterSort";
+export { Pagination } from "./Pagination";
+export { Slider } from "./Slider";

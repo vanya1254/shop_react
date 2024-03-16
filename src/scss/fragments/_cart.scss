@@ -78,7 +78,7 @@
   }
 
   &-item::after {
-    content: url(/img/x.svg);
+    content: url("../../assets/img/x.svg");
     position: absolute;
     cursor: pointer;
     right: 22px;
