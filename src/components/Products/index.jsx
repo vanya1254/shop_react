@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 import { Sencation, Items } from "../";
 
-export const Products = () => {
+export const Products = ({ products }) => {
   return (
     <div className="products center">
       <Sencation />
-      <Items />
+      <Items items={products} />
       <Link to="/catalog">
         <button className="browse-all">Browse All Product</button>
       </Link>

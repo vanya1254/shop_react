@@ -30,9 +30,8 @@
       margin-right: 12px;
     }
 
-    .cart-icon::after {
+    .cart-icon-after {
       position: absolute;
-      content: "2";
       top: -10px;
       right: 0;
       padding: 1px 6px;
@@ -40,6 +39,7 @@
       background-color: $secondColor;
       border-radius: 100%;
       border: none;
+      font-family: Roboto;
     }
   }
 

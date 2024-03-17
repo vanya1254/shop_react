@@ -34,9 +34,9 @@
       padding-left: 20px;
     }
 
-    &:first-child {
-      color: $secondColor;
-    }
+    // &:first-child {
+    //   color: $secondColor;
+    // }
 
     &:first-child::before {
       padding-left: 0;
@@ -46,5 +46,9 @@
       content: ".....";
       padding-left: 0;
     }
+  }
+
+  .active {
+    color: $secondColor;
   }
 }

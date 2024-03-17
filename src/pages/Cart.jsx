@@ -1,37 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import { Footer, Header, Subscribe } from "../components";
 
-import img1 from "../assets/img/item1.jpg";
-import img2 from "../assets/img/item2.jpg";
+import CartContext from "../contexts/cartContext";
 
 export const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      imgUrl: img1,
-      imgAlt: "image product",
-      title: "ELLERY X&nbsp;M&rsquo;O CAPSULE",
-      description:
-        "Known for her sculptural takes on&nbsp;traditional tailoring, Australian arbiter of&nbsp;cool Kym Ellery teams up&nbsp;with Moda Operandi.",
-      price: "$84.00",
-      color: "Navy",
-      size: "Xl",
-      quantity: 2,
-    },
-    {
-      id: 2,
-      imgUrl: img2,
-      imgAlt: "image product",
-      title: "ELLERY X&nbsp;M&rsquo;O CAPSULE",
-      description:
-        "Known for her sculptural takes on&nbsp;traditional tailoring, Australian arbiter of&nbsp;cool Kym Ellery teams up&nbsp;with Moda Operandi.",
-      price: "$400.00",
-      color: "Black",
-      size: "Xl",
-      quantity: 1,
-    },
-  ]);
+  const { cartItems, setCartItems } = useContext(CartContext);
   const [totalPrice, setTotalPrice] = useState(0);
 
   const onChangeQuantity = (value, id) => {
@@ -43,13 +17,25 @@ export const Cart = () => {
     });
 
     setCartItems(updatedCartItems);
-    setTotalPrice(
-      updatedCartItems.reduce(
-        (acc, cur) => acc + Number(cur.price.replace("$", "")),
-        0
-      )
-    );
   };
+
+  const onClickRemove = (id) => {
+    setCartItems((prev) => {
+      const updatePrev = prev.filter((item) => item.id !== id);
+
+      return [...updatePrev];
+    });
+  };
+
+  const onClickClearCart = () => {
+    setCartItems([]);
+  };
+
+  useEffect(() => {
+    setTotalPrice(
+      cartItems.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
+    );
+  }, [cartItems]);
 
   return (
     <>
@@ -73,7 +59,7 @@ export const Cart = () => {
                   <h2 className="cart-item-title"></h2>
                   <ul className="cart-item-species">
                     <li>
-                      Price: <span className="mark">{cartItem.price}</span>
+                      Price: <span className="mark">${cartItem.price}</span>
                     </li>
                     <li>
                       Color: <span className="color">{cartItem.color}</span>
@@ -93,34 +79,48 @@ export const Cart = () => {
                       />
                     </li>
                   </ul>
+                  <button
+                    onClick={() => onClickRemove(cartItem.id)}
+                    className="cart-item-after"
+                  ></button>
                 </div>
               </div>
             ))}
           </div>
-          <div className="cart-btns">
-            <button className="cart-btn">Clear Shopping Cart</button>
-            <button className="cart-btn">Continue Shopping</button>
-          </div>
+          {cartItems.length ? (
+            <div className="cart-btns">
+              <button onClick={onClickClearCart} className="cart-btn">
+                Clear Shopping Cart
+              </button>
+              <button className="cart-btn">Continue Shopping</button>
+            </div>
+          ) : (
+            "CART EMPTY"
+          )}
         </div>
-        <aside className="cart-order">
-          <form className="cart-order-form">
-            <label>Shipping Address</label>
-            <input type="text" placeholder="Bangladesh" />
-            <input type="text" placeholder="State" />
-            <input type="text" placeholder="Postcode / Zip" />
-            <button className="cart-btn">Get A&nbsp;Quote</button>
-          </form>
-          <div className="cart-order-total">
-            <h4 className="sub">
-              Sub Total <span className="ml-33">${totalPrice}</span>
-            </h4>
-            <h3 className="grand">
-              Grand Total <span className="mark ml-20">${totalPrice}</span>
-            </h3>
-            <hr />
-            <button className="checkout-btn">Proceed To&nbsp;Checkout</button>
-          </div>
-        </aside>
+        {cartItems.length ? (
+          <aside className="cart-order">
+            <form className="cart-order-form">
+              <label>Shipping Address</label>
+              <input type="text" placeholder="Bangladesh" />
+              <input type="text" placeholder="State" />
+              <input type="text" placeholder="Postcode / Zip" />
+              <button className="cart-btn">Get A&nbsp;Quote</button>
+            </form>
+            <div className="cart-order-total">
+              <h4 className="sub">
+                Sub Total <span className="ml-33">${totalPrice}</span>
+              </h4>
+              <h3 className="grand">
+                Grand Total <span className="mark ml-20">${totalPrice}</span>
+              </h3>
+              <hr />
+              <button className="checkout-btn">Proceed To&nbsp;Checkout</button>
+            </div>
+          </aside>
+        ) : (
+          ""
+        )}
       </div>
       <Subscribe />
       <Footer />

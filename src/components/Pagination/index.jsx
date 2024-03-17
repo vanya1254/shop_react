@@ -1,10 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Pagination = () => {
+export const Pagination = ({ curPage, setCurPage, totalPages }) => {
+  const onClickPage = (pageIdx) => {
+    setCurPage(pageIdx);
+  };
+
+  const onClickNextPage = () => {
+    setCurPage((prev) => {
+      if (prev < totalPages) {
+        prev += 1;
+      }
+      return prev;
+    });
+  };
+
+  const onClickPrevPage = () => {
+    setCurPage((prev) => {
+      if (prev > 1) {
+        prev -= 1;
+      }
+      return prev;
+    });
+  };
+
   return (
     <div className="pagination">
       <svg
+        onClick={onClickPrevPage}
         xmlns="http://www.w3.org/2000/svg"
         width="9"
         height="14"
@@ -17,29 +40,19 @@ export const Pagination = () => {
         />
       </svg>
       <div className="pages">
-        <Link to="/catalog" className="page">
-          1
-        </Link>
-        <Link to="/catalog" className="page">
-          2
-        </Link>
-        <Link to="/catalog" className="page">
-          3
-        </Link>
-        <Link to="/catalog" className="page">
-          4
-        </Link>
-        <Link to="/catalog" className="page">
-          5
-        </Link>
-        <Link to="/catalog" className="page">
-          6
-        </Link>
-        <Link to="/catalog" className="page">
-          20
-        </Link>
+        {[...new Array(totalPages)].map((_, i) => (
+          <Link
+            key={i}
+            to="/catalog"
+            className={`page ${curPage == i + 1 ? "active" : ""}`}
+            onClick={() => onClickPage(i + 1)}
+          >
+            {i + 1}
+          </Link>
+        ))}
       </div>
       <svg
+        onClick={onClickNextPage}
         xmlns="http://www.w3.org/2000/svg"
         width="9"
         height="14"

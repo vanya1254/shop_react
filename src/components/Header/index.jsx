@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Aside } from "../";
 
+import CartContext from "../../contexts/cartContext";
+
 import logoImage from "../../assets/img/logo.png";
 
 export const Header = () => {
+  const { cartItems } = useContext(CartContext);
+  const [totalItems, setTotalItems] = useState(0);
+
   const showAsideMenu = () => {
     if (document.getElementById("menu").style.display != "block") {
       document.getElementById("menu").style.display = "block";
@@ -13,6 +18,10 @@ export const Header = () => {
       document.getElementById("menu").style.display = "none";
     }
   };
+
+  useEffect(() => {
+    setTotalItems(cartItems.reduce((acc, cur) => acc + cur.quantity, 0));
+  }, [cartItems]);
 
   return (
     <header className="nav center">
@@ -80,6 +89,7 @@ export const Header = () => {
               fill="#E8E8E8"
             />
           </svg>
+          <button className="cart-icon-after">{totalItems}</button>
         </Link>
 
         <Aside />

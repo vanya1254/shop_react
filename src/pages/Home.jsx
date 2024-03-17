@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import {
   CenterBg,
@@ -11,12 +12,29 @@ import {
 } from "../components";
 
 export const Home = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://b24940cdae2d60eb.mokky.dev/items?page=1&limit=4"
+        );
+        setItems(response.data.items);
+      } catch (error) {
+        console.error("Error fetching:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <Header />
       <CenterBg />
       <Categories />
-      <Products />
+      <Products products={items} />
       <Features />
       <Subscribe />
       <Footer />

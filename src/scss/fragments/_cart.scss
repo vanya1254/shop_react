@@ -77,8 +77,12 @@
     background: #fff;
   }
 
-  &-item::after {
-    content: url("../../assets/img/x.svg");
+  &-item-after {
+    background-image: url("../../assets/img/x.svg");
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: none;
     position: absolute;
     cursor: pointer;
     right: 22px;
