@@ -1,19 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const Slider = () => {
+import img1 from "../../assets/img/slider/slider1.png";
+import img2 from "../../assets/img/slider/slider2.png";
+import img3 from "../../assets/img/slider/slider3.png";
+import img4 from "../../assets/img/slider/slider4.png";
+
+export const Slider = ({ onMouseOver, onMouseOut }) => {
+  const [imgs, setImgs] = useState([
+    { src: img1, alt: "product", active: true },
+    { src: img2, alt: "product", active: false },
+    { src: img3, alt: "product", active: false },
+    { src: img4, alt: "product", active: false },
+  ]);
+
+  const onClickNext = () => {
+    const activeImg = imgs
+      .map((img, i) => {
+        if (img.active) {
+          return i;
+        }
+      })
+      .filter((i) => i !== undefined)[0];
+
+    const updatedImgs = [...imgs];
+    updatedImgs[activeImg].active = false;
+    updatedImgs[(activeImg + 1) % imgs.length].active = true;
+    setImgs(updatedImgs);
+  };
+  const onClickPrev = () => {
+    const activeImg = imgs
+      .map((img, i) => {
+        if (img.active) {
+          return i;
+        }
+      })
+      .filter((i) => i !== undefined)[0];
+
+    const updatedImgs = [...imgs];
+    updatedImgs[activeImg].active = false;
+    updatedImgs[(activeImg - 1 + imgs.length) % imgs.length].active = true;
+    setImgs(updatedImgs);
+  };
+
   const onClickBottomBtn = (index) => {
-    // slideIndex = index;
-    // updateSlider();
+    const updatedImgs = imgs.map((img, i) => {
+      if (i === index) {
+        img.active = true;
+      } else {
+        img.active = false;
+      }
+      return img;
+    });
+
+    setImgs(updatedImgs);
   };
 
   return (
     <div
-      onmouseover="changeItem()"
-      onmouseout="rechangeItem()"
+      // onMouseOver={onMouseOver()}
+      // onMouseOut={onMouseOut()}
       className="background"
     >
       <div className="slider">
-        <button className="slider-arrow prev">
+        <button className="slider-arrow prev" onClick={onClickPrev}>
           <svg
             className="slider-previous"
             xmlns="http://www.w3.org/2000/svg"
@@ -29,41 +78,27 @@ export const Slider = () => {
           </svg>
         </button>
         <div className="slider-product">
-          <img
-            className="slider-product-img"
-            src="/img/slider/slider1.png"
-            alt="product"
-          />
-          <img
-            className="slider-product-img"
-            src="/img/slider/slider2.png"
-            alt="product"
-            style="display: none;"
-          />
-          <img
-            className="slider-product-img"
-            src="/img/slider/slider3.png"
-            alt="product"
-            style="display: none;"
-          />
-          <img
-            className="slider-product-img"
-            src="/img/slider/slider4.png"
-            alt="product"
-            style="display: none;"
-          />
+          {imgs.map((img, i) => (
+            <img
+              key={i}
+              className="slider-product-img"
+              src={img.src}
+              alt={img.alt}
+              style={{ display: img.active ? "" : "none" }}
+            />
+          ))}
           <div className="slider-indicators">
-            <button
-              type="button"
-              onClick={() => onClickBottomBtn(0)}
-              className="active"
-            ></button>
-            <button type="button" onclick="onClickBottomBtn(1)"></button>
-            <button type="button" onclick="onClickBottomBtn(2)"></button>
-            <button type="button" onclick="onClickBottomBtn(3)"></button>
+            {imgs.map((img, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => onClickBottomBtn(i)}
+                className={`${img.active ? "active" : ""}`}
+              ></button>
+            ))}
           </div>
         </div>
-        <button className="slider-arrow next">
+        <button className="slider-arrow next" onClick={onClickNext}>
           <svg
             className="slider-next"
             xmlns="http://www.w3.org/2000/svg"

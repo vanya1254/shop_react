@@ -9,6 +9,8 @@ export { Features } from "./Features";
 export { Subscribe } from "./Subscribe";
 export { Footer } from "./Footer";
 export { TopHead } from "./TopHead";
+export { SortDetails } from "./SortDetails";
 export { FilterSort } from "./FilterSort";
 export { Pagination } from "./Pagination";
 export { Slider } from "./Slider";
+export { ProductLayer } from "./ProductLayer";

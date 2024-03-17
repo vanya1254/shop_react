@@ -103,7 +103,7 @@ export const Items = () => {
           </div>
           <img src={item.imgUrl} alt={item.imgAlt} />
           <article className="item-content">
-            <Link to="product">
+            <Link to={`/product/${item.id}`}>
               <h4>{item.title}</h4>
             </Link>
             <p>{item.description}</p>

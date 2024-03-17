@@ -75,7 +75,9 @@
     }
 
     &-bottom {
-      @include displayFlow(column, wrap);
+      // @include displayFlow(column, wrap);
+      flex-direction: column;
+      height: fit-content;
 
       align-items: center;
       gap: 48px;
