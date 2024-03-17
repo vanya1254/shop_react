@@ -7,10 +7,10 @@ import icon4 from "../../assets/img/icon4.svg";
 
 export const Footer = () => {
   const icons = [
-    { img: icon1, imgAlt: "facebook" },
-    { img: icon2, imgAlt: "instagram" },
+    // { img: icon1, imgAlt: "facebook" },
+    // { img: icon2, imgAlt: "instagram" },
     { img: icon3, imgAlt: "painterest" },
-    { img: icon4, imgAlt: "twitter" },
+    // { img: icon4, imgAlt: "twitter" },
   ];
 
   return (
