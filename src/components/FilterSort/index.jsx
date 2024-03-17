@@ -1,7 +1,7 @@
 import React from "react";
 import { SortDetails } from "../SortDetails";
 
-export const FilterSort = () => {
+export const FilterSort = ({ sizes, setCurSizes }) => {
   const categories = [
     "Accessories",
     "Bags",
@@ -41,7 +41,17 @@ export const FilterSort = () => {
     "Vivienne Westwood",
     "Olivier Rousteing",
   ];
-  const sizes = ["XS", "S", "M", "L", "XL"];
+
+  const onClickSize = (size) => {
+    setCurSizes((prev) => {
+      const check = prev.filter((s) => s === size).length;
+
+      if (check) {
+        return [...prev.filter((s) => s !== size)];
+      }
+      return [...prev, size];
+    });
+  };
 
   return (
     <div className="filter-sort center">
@@ -102,7 +112,12 @@ export const FilterSort = () => {
             ...sizes.map((size, i) => (
               <div key={i} className="sort-check">
                 <input id={`sort-check${i}`} type="checkbox" />
-                <label htmlFor={`sort-check${i}`}>{size}</label>
+                <label
+                  onClick={() => onClickSize(size)}
+                  htmlFor={`sort-check${i}`}
+                >
+                  {size}
+                </label>
               </div>
             )),
           ]}
