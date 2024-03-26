@@ -22,18 +22,6 @@ export const Product = () => {
         `https://b24940cdae2d60eb.mokky.dev/items/${pageParams.id}`
       );
       setProduct(data);
-
-      // const sizesFromResponse = sizesList
-      //   .map((size) => {
-      //     const check = data.items.filter((item) => item.size === size).length;
-
-      //     if (check) {
-      //       return size;
-      //     }
-      //   })
-      //   .filter((size) => size);
-
-      // setSizes(sizesFromResponse);
     } catch (error) {
       console.error("Error fetching:", error.message);
     }

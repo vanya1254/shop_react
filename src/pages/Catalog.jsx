@@ -45,8 +45,10 @@ export const Catalog = () => {
   };
 
   const setFilteredItems = () => {
-    const filteredItems = curSizes
-      .map((size) => {
+    let filteredItems = [];
+    filteredItems = filteredItems.concat.apply(
+      filteredItems,
+      curSizes.map((size) => {
         const itemsPerSize = items
           .filter((item) => {
             if (item.size === size) {
@@ -57,12 +59,7 @@ export const Catalog = () => {
 
         return itemsPerSize;
       })
-      .map((arr) => {
-        for (let i = 0; i < arr.length; i++) {
-          return arr[i];
-        }
-      })
-      .filter((i) => i);
+    );
 
     setItems(filteredItems);
   };
