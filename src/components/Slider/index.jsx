@@ -5,7 +5,7 @@ import img2 from "../../assets/img/slider/slider2.png";
 import img3 from "../../assets/img/slider/slider3.png";
 import img4 from "../../assets/img/slider/slider4.png";
 
-export const Slider = ({ img, onMouseOver, onMouseOut }) => {
+export const Slider = ({ img }) => {
   const [imgs, setImgs] = useState([
     { src: img || img1, alt: "product", active: true },
     { src: img2, alt: "product", active: false },
@@ -55,10 +55,18 @@ export const Slider = ({ img, onMouseOver, onMouseOut }) => {
     setImgs(updatedImgs);
   };
 
+  const onMouseOver = () => {
+    document.getElementById("move").style.transform = "translateY(+64px)";
+  };
+
+  const onMouseOut = () => {
+    document.getElementById("move").style.transform = "translateY(0px)";
+  };
+
   return (
     <div
-      // onMouseOver={onMouseOver()}
-      // onMouseOut={onMouseOut()}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
       className="background"
     >
       <div className="slider">
