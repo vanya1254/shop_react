@@ -12,7 +12,7 @@ import {
   Footer,
 } from "../components";
 
-export const Catalog = () => {
+const Catalog = () => {
   const [items, setItems] = useState([]);
   const [curPage, setCurPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -100,3 +100,5 @@ export const Catalog = () => {
     </>
   );
 };
+
+export default Catalog;

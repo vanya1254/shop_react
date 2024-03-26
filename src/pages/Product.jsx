@@ -12,7 +12,7 @@ import {
   Footer,
 } from "../components";
 
-export const Product = () => {
+const Product = () => {
   const pageParams = useParams();
   const [product, setProduct] = useState();
 
@@ -51,3 +51,5 @@ export const Product = () => {
     </>
   );
 };
+
+export default Product;

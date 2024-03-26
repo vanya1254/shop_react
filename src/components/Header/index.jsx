@@ -26,7 +26,7 @@ export const Header = () => {
   return (
     <header className="nav center">
       <nav className="nav-left">
-        <Link to="/">
+        <Link to="/shop_react/">
           <img src={logoImage} alt="logo" className="logo" />
         </Link>
         <svg
@@ -59,7 +59,7 @@ export const Header = () => {
           />
         </svg>
 
-        <Link to="/registration" className="profile">
+        <Link to="/shop_react/registration" className="profile">
           <svg
             className="profile"
             width="29"
@@ -75,7 +75,7 @@ export const Header = () => {
           </svg>
         </Link>
 
-        <Link to="/cart" className="cart-icon">
+        <Link to="/shop_react/cart" className="cart-icon">
           <svg
             className="cart-icon"
             width="32"

@@ -8,7 +8,7 @@ export const Products = ({ products }) => {
     <div className="products center">
       <Sencation />
       <Items items={products} />
-      <Link to="/catalog">
+      <Link to="/shop_react/catalog">
         <button className="browse-all">Browse All Product</button>
       </Link>
     </div>

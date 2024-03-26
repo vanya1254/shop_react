@@ -8,10 +8,10 @@ export const TopHead = () => {
       <nav aria-label="breadcrumb">
         <ol className="top-head-breadcrumb">
           <li className="top-head-breadcrumb-item">
-            <Link to="/">Home</Link>
+            <Link to="/shop_react/">Home</Link>
           </li>
           <li className="top-head-breadcrumb-item">
-            <Link to="/catalog">Men</Link>
+            <Link to="/shop_react/catalog">Men</Link>
           </li>
           <li className="top-head-breadcrumb-item active" aria-current="page">
             New Arrivals

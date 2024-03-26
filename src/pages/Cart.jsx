@@ -4,7 +4,7 @@ import { Footer, Header, Subscribe } from "../components";
 
 import CartContext from "../contexts/cartContext";
 
-export const Cart = () => {
+const Cart = () => {
   const { cartItems, setCartItems } = useContext(CartContext);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -47,7 +47,10 @@ export const Cart = () => {
           <h2 className="top-head-title">Shopping Cart</h2>
         </section>
       </div>
-      <div className="center cart">
+      <div
+        className="center cart"
+        style={!cartItems.length ? { height: "50vh" } : {}}
+      >
         <div className="cart-container">
           <div className="cart-items">
             {cartItems.map((cartItem) => (
@@ -129,3 +132,5 @@ export const Cart = () => {
     </>
   );
 };
+
+export default Cart;

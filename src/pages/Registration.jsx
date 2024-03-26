@@ -1,7 +1,7 @@
 import React from "react";
 import { Footer, Header, Subscribe } from "../components";
 
-export const Registration = () => {
+const Registration = () => {
   return (
     <>
       <Header />
@@ -72,3 +72,5 @@ export const Registration = () => {
     </>
   );
 };
+
+export default Registration;

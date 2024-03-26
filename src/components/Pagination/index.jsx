@@ -43,7 +43,7 @@ export const Pagination = ({ curPage, setCurPage, totalPages }) => {
         {[...new Array(totalPages)].map((_, i) => (
           <Link
             key={i}
-            to="/catalog"
+            to="/shop_react/catalog"
             className={`page ${curPage == i + 1 ? "active" : ""}`}
             onClick={() => onClickPage(i + 1)}
           >

@@ -52,7 +52,7 @@ export const Items = ({ items }) => {
             </div>
             <img src={item.imgUrl} alt={item.imgAlt} />
             <article className="item-content">
-              <Link to={`/product/${item.id}`}>
+              <Link to={`/shop_react/product/${item.id}`}>
                 <h4>{item.title}</h4>
               </Link>
               <p>{item.description}</p>

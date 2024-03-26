@@ -7,7 +7,7 @@ import img4 from "../../assets/img/slider/slider4.png";
 
 export const Slider = ({ img }) => {
   const [imgs, setImgs] = useState([
-    { src: img || img1, alt: "product", active: true },
+    { src: `/shop_react/${img}` || img1, alt: "product", active: true },
     { src: img2, alt: "product", active: false },
     { src: img3, alt: "product", active: false },
     { src: img4, alt: "product", active: false },
