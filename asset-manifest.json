@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/shop_react/static/css/main.3ce35ca1.css",
+    "main.js": "/shop_react/static/js/main.e7a9b109.js",
+    "static/media/category4.png": "/shop_react/static/media/category4.25f39845cf43220a86f0.png",
+    "static/media/subscribe-bg.png": "/shop_react/static/media/subscribe-bg.37acd4aa144cddf1970d.png",
+    "static/media/man.png": "/shop_react/static/media/man.5fac993b4822f9728254.png",
+    "static/media/category2.png": "/shop_react/static/media/category2.4a616afc1d6381d50687.png",
+    "static/media/category1.png": "/shop_react/static/media/category1.531aa5e4264dd5ebffa0.png",
+    "static/media/slider2.png": "/shop_react/static/media/slider2.1e7ca0f4cc5f0b2ba5e1.png",
+    "static/media/slider3.png": "/shop_react/static/media/slider3.8eb708cc8da58b619320.png",
+    "static/media/slider4.png": "/shop_react/static/media/slider4.f9fbe6d40a205faa1c3d.png",
+    "static/media/slider1.png": "/shop_react/static/media/slider1.04094be448280021a86c.png",
+    "static/media/category3.png": "/shop_react/static/media/category3.f6e4b8e026e9b8871ae6.png",
+    "static/media/subscriber.png": "/shop_react/static/media/subscriber.deebfa7188b31bc0e27e.png",
+    "static/media/feature-icon1.svg": "/shop_react/static/media/feature-icon1.bb28e654127983d4f5e26a3c8edc41fa.svg",
+    "static/media/feature-icon3.svg": "/shop_react/static/media/feature-icon3.de1a44abbee3b15c95d29a33f0ede035.svg",
+    "static/media/feature-icon2.svg": "/shop_react/static/media/feature-icon2.e6068304d5abbc235058aa8c98c1f14b.svg",
+    "static/media/icon2.svg": "/shop_react/static/media/icon2.0dd482fa842bd7851f54ff91a01be94a.svg",
+    "static/media/arrow-right.svg": "/shop_react/static/media/arrow-right.0ba79cd5aa7a2a0dc947.svg",
+    "static/media/icon4.svg": "/shop_react/static/media/icon4.4cba89ebf19a0cf621e6a4b371bf0621.svg",
+    "static/media/icon3.svg": "/shop_react/static/media/icon3.a6bb2f3d611b0793e36fd34a4d698dfb.svg",
+    "static/media/icon1.svg": "/shop_react/static/media/icon1.269ec09791a7fbaa6abd794da8f87347.svg",
+    "static/media/x.svg": "/shop_react/static/media/x.c9c69f95e027d77c938f.svg",
+    "index.html": "/shop_react/index.html",
+    "static/media/icon-li.svg": "/shop_react/static/media/icon-li.a93987376c570dea9185.svg",
+    "main.3ce35ca1.css.map": "/shop_react/static/css/main.3ce35ca1.css.map",
+    "main.e7a9b109.js.map": "/shop_react/static/js/main.e7a9b109.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ce35ca1.css",
+    "static/js/main.e7a9b109.js"
+  ]
+}
