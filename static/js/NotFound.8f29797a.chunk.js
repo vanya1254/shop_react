@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshop_react=self.webpackChunkshop_react||[]).push([[810],{44:(e,s,c)=>{c.r(s),c.d(s,{default:()=>a});c(43);var t=c(579);const a=()=>(0,t.jsx)("div",{children:"NotFound"})}}]);
+//# sourceMappingURL=NotFound.8f29797a.chunk.js.map
