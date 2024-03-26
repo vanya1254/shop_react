@@ -5,9 +5,9 @@ import img2 from "../../assets/img/slider/slider2.png";
 import img3 from "../../assets/img/slider/slider3.png";
 import img4 from "../../assets/img/slider/slider4.png";
 
-export const Slider = ({ onMouseOver, onMouseOut }) => {
+export const Slider = ({ img, onMouseOver, onMouseOut }) => {
   const [imgs, setImgs] = useState([
-    { src: img1, alt: "product", active: true },
+    { src: img || img1, alt: "product", active: true },
     { src: img2, alt: "product", active: false },
     { src: img3, alt: "product", active: false },
     { src: img4, alt: "product", active: false },

@@ -1,26 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "../../contexts/cartContext";
 
 import { SortDetails } from "../";
 
 export const ProductLayer = ({ product }) => {
   const sizes = ["XS", "S", "M", "L", "XL"];
+  const { cartItems, setCartItems } = useContext(CartContext);
+
+  const onClickAddToCart = () => {
+    const isAdded = cartItems.filter((item) => item.id === product.id).length;
+
+    if (isAdded) {
+      const updatedCartItems = cartItems.map((item) => {
+        if (item.id === product.id) {
+          item.quantity += 1;
+        }
+        return item;
+      });
+
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
 
   return (
     <div className="layer center">
       <section id="move" className="species">
         <div className="species-titles">
-          <h4>Women Collection</h4>
+          <h4>{(product.sex = "male" ? "Men" : "Women")} Collection</h4>
           <hr className="title-divider" />
-          <h3>Moschino Cheap And Chic</h3>
+          <h3>{product.title || "Moschino Cheap And Chic"}</h3>
         </div>
         <div className="species-top">
           <p>
-            Compellingly actualize fully researched processes behtmlFore
+            {product.description ||
+              `Compellingly actualize fully researched processes behtmlFore
             proactive outsourcing. Progressively syndicate collaborative
             architectures behtmlFore cutting-edge services. Completely visualize
-            parallel core competencies rather than exceptional portals.
+            parallel core competencies rather than exceptional portals.`}
           </p>
-          <span>$561</span>
+          <span>${product.price}</span>
         </div>
         <hr className="species-divider" />
         <div className="filter-sort center species-bottom">
@@ -39,7 +59,7 @@ export const ProductLayer = ({ product }) => {
             />
             <SortDetails title={"QUANTITY"} children={[]} />
           </div>
-          <button className="browse-all to-cart">
+          <button onClick={onClickAddToCart} className="browse-all to-cart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="27"

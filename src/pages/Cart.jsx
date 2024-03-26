@@ -32,6 +32,8 @@ export const Cart = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     setTotalPrice(
       cartItems.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
     );

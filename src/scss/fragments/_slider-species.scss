@@ -75,7 +75,6 @@
     }
 
     &-bottom {
-      // @include displayFlow(column, wrap);
       flex-direction: column;
       height: fit-content;
 

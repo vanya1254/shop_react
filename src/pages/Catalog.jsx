@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import {
@@ -19,45 +19,34 @@ export const Catalog = () => {
   const [sizes, setSizes] = useState([]);
   const [curSizes, setCurSizes] = useState([]);
   const sizesList = ["XS", "S", "M", "L", "XL"];
-  const isFilteringRef = useRef(false);
 
-  useEffect(() => {
-    if (!isFilteringRef.current) {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(
-            `https://b24940cdae2d60eb.mokky.dev/items?page=${curPage}&limit=4`
-          );
-          setItems(response.data.items);
-          setTotalPages(response.data.meta.total_pages);
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://b24940cdae2d60eb.mokky.dev/items?page=${curPage}&limit=4`
+      );
+      setItems(data.items);
+      setTotalPages(data.meta.total_pages);
 
-          const sizesFromResponse = sizesList
-            .map((size) => {
-              const check = response.data.items.filter(
-                (item) => item.size === size
-              ).length;
+      const sizesFromResponse = sizesList
+        .map((size) => {
+          const check = data.items.filter((item) => item.size === size).length;
 
-              if (check) {
-                return size;
-              }
-            })
-            .filter((size) => size);
+          if (check) {
+            return size;
+          }
+        })
+        .filter((size) => size);
 
-          setSizes(sizesFromResponse);
-        } catch (error) {
-          console.error("Error fetching:", error.message);
-        }
-      };
-
-      fetchData();
-      window.scrollTo(0, 0);
-      isFilteringRef.current = true;
+      setSizes(sizesFromResponse);
+    } catch (error) {
+      console.error("Error fetching:", error.message);
     }
-  }, [curPage]);
+  };
 
-  useEffect(() => {
-    if (isFilteringRef.current) {
-      const filteredItems = curSizes.map((size) => {
+  const setFilteredItems = () => {
+    const filteredItems = curSizes
+      .map((size) => {
         const itemsPerSize = items
           .filter((item) => {
             if (item.size === size) {
@@ -67,12 +56,31 @@ export const Catalog = () => {
           .filter((i) => i);
 
         return itemsPerSize;
-      });
-      console.log(filteredItems);
-      setItems();
-      isFilteringRef.current = false;
-    }
-  }, [curSizes]);
+      })
+      .map((arr) => {
+        for (let i = 0; i < arr.length; i++) {
+          return arr[i];
+        }
+      })
+      .filter((i) => i);
+
+    setItems(filteredItems);
+  };
+
+  useEffect(() => {
+    const getData = async () => {
+      if (curSizes.length) {
+        await fetchData();
+
+        setFilteredItems();
+      } else {
+        await fetchData();
+      }
+    };
+
+    getData();
+    window.scrollTo(0, 0);
+  }, [curPage, curSizes]);
 
   return (
     <>

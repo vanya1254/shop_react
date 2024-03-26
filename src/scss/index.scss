@@ -137,8 +137,6 @@ input[type="checkbox"]:not(:checked) + label:after {
 
 input[type="radio"]:checked + label:after,
 input[type="radio"]:not(:checked) + label:after {
-  // left: 3.42px;
-  // top: 3.42px;
   left: 0.208rem;
   top: 0.208rem;
   width: 13.07692px;
@@ -179,7 +177,6 @@ body {
 }
 
 .content {
-  // @include displayFlow(column, wrap);
   flex-direction: column;
   justify-content: center;
 
@@ -233,12 +230,6 @@ h2.subtitle {
   background: url("../assets/img/category4.png") no-repeat;
   background-size: cover;
 }
-
-/* .category {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 
 .long {
   width: 1140px;
